@@ -1,51 +1,115 @@
-import video1 from "../assets/video1.mp4";
-import video2 from "../assets/video2.mp4";
+import { useRef } from "react";
+import docimg from "../assets/docimg.png";
 
 const HeroSection = () => {
+  const scrollContainerRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollLeft -= 200;
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollLeft += 200;
+    }
+  };
+
   return (
-    <div className="flex flex-col items-center mt-6 lg:mt-20">
-      <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
-        VirtualR build tools
+    <div className="flex flex-col items-center mt-6 lg:mt-0 px-6">
+      <h1 className="text-m sm:text-5xl lg:text-6xl text-center tracking-wide">
+        Discover Government Schemes
         <span className="bg-gradient-to-r from-orange-500 to-red-800 text-transparent bg-clip-text">
           {" "}
-          for developers
+          Tailored for You
         </span>
       </h1>
+      <div className="flex items-center mt-6 w-full justify-center">
+        <button onClick={scrollLeft} className="mx-2 text-orange-500">
+          ◀
+        </button>
+        <div
+          className="flex overflow-x-hidden w-full justify-start"
+          ref={scrollContainerRef}
+          style={{
+            scrollBehavior: "smooth",
+            padding: "20px",
+          }}
+        >
+          {/* Spacer Div for Padding */}
+          <div style={{ width: "10px", flexShrink: 0 }}></div>
+
+          {/* Image Frames */}
+          <div className="flex-shrink-0 mx-4">
+            <img
+              src={docimg}
+              alt="Illustration of government schemes"
+              className="rounded-lg border border-orange-700 shadow-sm shadow-orange-400"
+              style={{ width: "510px", height: "350px" }}
+            />
+          </div>
+          <div className="flex-shrink-0 mx-4">
+            <img
+              src={docimg}
+              alt="Illustration of scheme eligibility"
+              className="rounded-lg border border-orange-700 shadow-sm shadow-orange-400"
+              style={{ width: "510px", height: "350px" }}
+            />
+          </div>
+          <div className="flex-shrink-0 mx-4">
+            <img
+              src={docimg}
+              alt="Illustration of scheme eligibility"
+              className="rounded-lg border border-orange-700 shadow-sm shadow-orange-400"
+              style={{ width: "510px", height: "350px" }}
+            />
+          </div>
+          <div className="flex-shrink-0 mx-4">
+            <img
+              src={docimg}
+              alt="Illustration of scheme eligibility"
+              className="rounded-lg border border-orange-700 shadow-sm shadow-orange-400"
+              style={{ width: "510px", height: "350px" }}
+            />
+          </div>
+          <div className="flex-shrink-0 mx-4">
+            <img
+              src={docimg}
+              alt="Illustration of scheme eligibility"
+              className="rounded-lg border border-orange-700 shadow-sm shadow-orange-400"
+              style={{ width: "510px", height: "350px" }}
+            />
+          </div>
+          <div className="flex-shrink-0 mx-4">
+            <img
+              src={docimg}
+              alt="Illustration of scheme eligibility"
+              className="rounded-lg border border-orange-700 shadow-sm shadow-orange-400"
+              style={{ width: "510px", height: "350px" }}
+            />
+          </div>
+
+        </div>
+        <button onClick={scrollRight} className="mx-2 text-orange-500">
+          ▶
+        </button>
+      </div>
       <p className="mt-10 text-lg text-center text-neutral-500 max-w-4xl">
-        Empower your creativity and bring your VR app ideas to life with our
-        intuitive development tools. Get started today and turn your imagination
-        into immersive reality!
+        Simplify your access to government schemes with our AI-driven platform. 
+        Upload your documents or provide your details to instantly discover the benefits 
+        you're eligible for. Save time, avoid queues, and get the support you need effortlessly!
       </p>
       <div className="flex justify-center my-10">
         <a
           href="#"
           className="bg-gradient-to-r from-orange-500 to-orange-800 py-3 px-4 mx-3 rounded-md"
         >
-          Start for free
+          Upload Documents
         </a>
         <a href="#" className="py-3 px-4 mx-3 rounded-md border">
-          Documentation
+          Enter Details Manually
         </a>
-      </div>
-      <div className="flex mt-10 justify-center">
-        <video
-          autoPlay
-          loop
-          muted
-          className="rounded-lg w-1/2 border border-orange-700 shadow-sm shadow-orange-400 mx-2 my-4"
-        >
-          <source src={video1} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video
-          autoPlay
-          loop
-          muted
-          className="rounded-lg w-1/2 border border-orange-700 shadow-sm shadow-orange-400 mx-2 my-4"
-        >
-          <source src={video2} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
       </div>
     </div>
   );

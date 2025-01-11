@@ -4,7 +4,7 @@ import { Fingerprint } from "lucide-react";
 import { ShieldHalf } from "lucide-react";
 import { PlugZap } from "lucide-react";
 import { GlobeLock } from "lucide-react";
-
+import FeatureSection from "C:/Users/chand/Downloads/eymain/virtualr-main/src/components/FeatureSection"
 import user1 from "../assets/profile-pictures/user1.jpg";
 import user2 from "../assets/profile-pictures/user2.jpg";
 import user3 from "../assets/profile-pictures/user3.jpg";
@@ -13,142 +13,115 @@ import user5 from "../assets/profile-pictures/user5.jpg";
 import user6 from "../assets/profile-pictures/user6.jpg";
 
 export const navItems = [
-  { label: "Features", href: "#" },
-  { label: "Workflow", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "Testimonials", href: "#" },
+  {label: "Home", href: "/"},
+  { label: "Features", href: "/features" },  // updated to include path
+  { label: "Steps", href: "/workflow" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Testimonials", href: "/testimonials" },
 ];
 
 export const testimonials = [
   {
-    user: "John Doe",
-    company: "Stellar Solutions",
+    user: "Priya Sharma",
+    location: "Madhya Pradesh",
     image: user1,
-    text: "I am extremely satisfied with the services provided. The team was responsive, professional, and delivered results beyond my expectations.",
+    text: "This platform made it so much easier for me to access government schemes. The AI-guided application process saved me countless hours!",
   },
   {
-    user: "Jane Smith",
-    company: "Blue Horizon Technologies",
+    user: "Ramesh Verma",
+    location: "Uttar Pradesh",
     image: user2,
-    text: "I couldn't be happier with the outcome of our project. The team's creativity and problem-solving skills were instrumental in bringing our vision to life",
+    text: "I used to struggle with finding the right schemes for my family. This tool recommended the perfect options for us in minutes!",
   },
   {
-    user: "David Johnson",
-    company: "Quantum Innovations",
+    user: "Sita Devi",
+    location: "Bihar",
     image: user3,
-    text: "Working with this company was a pleasure. Their attention to detail and commitment to excellence are commendable. I would highly recommend them to anyone looking for top-notch service.",
-  },
-  {
-    user: "Ronee Brown",
-    company: "Fusion Dynamics",
-    image: user4,
-    text: "Working with the team at XYZ Company was a game-changer for our project. Their attention to detail and innovative solutions helped us achieve our goals faster than we thought possible. We are grateful for their expertise and professionalism!",
-  },
-  {
-    user: "Michael Wilson",
-    company: "Visionary Creations",
-    image: user5,
-    text: "I am amazed by the level of professionalism and dedication shown by the team. They were able to exceed our expectations and deliver outstanding results.",
-  },
-  {
-    user: "Emily Davis",
-    company: "Synergy Systems",
-    image: user6,
-    text: "The team went above and beyond to ensure our project was a success. Their expertise and dedication are unmatched. I look forward to working with them again in the future.",
+    text: "I can now stay updated on new schemes without needing to travel or stand in long queues. It's a game-changer for rural citizens.",
   },
 ];
+
 
 export const features = [
   {
     icon: <BotMessageSquare />,
-    text: "Drag-and-Drop Interface",
-    description:
-      "Easily design and arrange your VR environments with a user-friendly drag-and-drop interface.",
+    text: "AI-Powered Scheme Discovery",
+    description: "Use our AI to match you with the most relevant government schemes based on your profile and needs.",
   },
   {
     icon: <Fingerprint />,
-    text: "Multi-Platform Compatibility",
-    description:
-      "Build VR applications that run seamlessly across multiple platforms, including mobile, desktop, and VR headsets.",
+    text: "Document Verification",
+    description: "Seamless document upload and AI-based verification to eliminate the hassle of manual checks.",
   },
   {
     icon: <ShieldHalf />,
-    text: "Built-in Templates",
-    description:
-      "Jumpstart your VR projects with a variety of built-in templates for different types of applications and environments.",
+    text: "Eligibility Checker",
+    description: "Get instant insights into your eligibility for various schemes without any manual calculations.",
   },
   {
     icon: <BatteryCharging />,
-    text: "Real-Time Preview",
-    description:
-      "Preview your VR application in real-time as you make changes, allowing for quick iterations and adjustments.",
+    text: "Real-Time Updates",
+    description: "Stay informed with real-time updates on your application status and new schemes.",
   },
   {
     icon: <PlugZap />,
-    text: "Collaboration Tools",
-    description:
-      "Work together with your team in real-time on VR projects, enabling seamless collaboration and idea sharing.",
+    text: "Guided Application Process",
+    description: "Step-by-step guidance for filling out and submitting applications, reducing errors and delays.",
   },
   {
     icon: <GlobeLock />,
-    text: "Analytics Dashboard",
-    description:
-      "Gain valuable insights into user interactions and behavior within your VR applications with an integrated analytics dashboard.",
+    text: "Secure Data Handling",
+    description: "Your personal information and documents are encrypted and stored securely.",
   },
 ];
+
 
 export const checklistItems = [
   {
-    title: "Code merge made easy",
-    description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+    title: "Upload Documents",
+    description: "Upload essential documents such as Aadhaar, income certificates, and more.",
   },
   {
-    title: "Review code without worry",
-    description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+    title: "Check Eligibility",
+    description: "Our AI checks your eligibility for various government schemes.",
   },
   {
-    title: "AI Assistance to reduce time",
-    description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+    title: "Discover Schemes",
+    description: "View a curated list of schemes tailored to your needs.",
   },
   {
-    title: "Share work in minutes",
-    description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+    title: "Apply with Ease",
+    description: "Fill out applications in a guided and error-free process.",
   },
 ];
 
+
 export const pricingOptions = [
   {
-    title: "Free",
-    price: "$0",
+    title: "Basic",
+    price: "Free",
     features: [
-      "Private board sharing",
-      "5 Gb Storage",
-      "Web Analytics",
-      "Private Mode",
+      "Access to AI based scheme discovery",
+      "Document upload and verification",
+      "Basic eligibility check and scheme details",
     ],
   },
   {
     title: "Pro",
-    price: "$10",
+    price: "₹99",
     features: [
-      "Private board sharing",
-      "10 Gb Storage",
-      "Web Analytics (Advance)",
-      "Private Mode",
+      "Advanced scheme recommendations",
+      "Priority application assistance",
+      "Real-time updates and notifications",
     ],
   },
   {
     title: "Enterprise",
-    price: "$200",
+    price: "₹499",
     features: [
-      "Private board sharing",
-      "Unlimited Storage",
-      "High Performance Network",
-      "Private Mode",
+      "Dedicated support for organizations",
+      "Bulk document processing",
+      "Insights and analytics for scheme participation",
     ],
   },
 ];

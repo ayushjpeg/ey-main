@@ -1,19 +1,19 @@
 import { CheckCircle2 } from "lucide-react";
-import codeImg from "../assets/code.jpg";
+import docimg from "../assets/docimg.png";
 import { checklistItems } from "../constants";
 
 const Workflow = () => {
   return (
     <div className="mt-20">
       <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center mt-6 tracking-wide">
-        Accelerate your{" "}
+      Easy steps to{" "}
         <span className="bg-gradient-to-r from-orange-500 to-orange-800 text-transparent bg-clip-text">
-          coding workflow.
+          get schemes suited for you.
         </span>
       </h2>
       <div className="flex flex-wrap justify-center">
         <div className="p-2 w-full lg:w-1/2">
-          <img src={codeImg} alt="Coding" />
+          <img src={docimg} alt="Coding" />
         </div>
         <div className="pt-12 w-full lg:w-1/2">
           {checklistItems.map((item, index) => (

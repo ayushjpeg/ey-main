@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import FeatureSection from "./components/FeatureSection";
@@ -8,17 +9,31 @@ import Testimonials from "./components/Testimonials";
 
 const App = () => {
   return (
-    <>
+    <Router>
       <Navbar />
       <div className="max-w-7xl mx-auto pt-20 px-6">
-        <HeroSection />
-        <FeatureSection />
-        <Workflow />
-        <Pricing />
-        <Testimonials />
-        <Footer />
+        {/* Set up the Routes for different pages */}
+        <Routes>
+          {/* Home page - All sections */}
+          <Route path="/" element={
+            <>
+              <HeroSection />
+              <FeatureSection />
+              <Workflow />
+              <Pricing />
+              <Testimonials />
+            </>
+          } />
+
+          {/* Individual pages */}
+          <Route path="/features" element={<FeatureSection />} />
+          <Route path="/workflow" element={<Workflow />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+        </Routes>
       </div>
-    </>
+      <Footer />
+    </Router>
   );
 };
 
