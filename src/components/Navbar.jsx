@@ -15,7 +15,6 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
       <div className="container px-4 mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
-          
           <a href="/" className="py-2 px-3 border rounded-md">
             <div className="flex items-center flex-shrink-0">
               <img className="h-10 w-10 mr-2" src={logos} alt="Logo" />
@@ -48,21 +47,23 @@ const Navbar = () => {
           </div>
         </div>
         {mobileDrawerOpen && (
-          <div className="fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
+          <div className="fixed right-0 z-20 bg-white w-full p-12 flex flex-col justify-center items-center lg:hidden text-black">
             <ul>
               {navItems.map((item, index) => (
                 <li key={index} className="py-4">
-                  <Link to={item.href}>{item.label}</Link>
+                  <Link to={item.href} className="text-black">
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
             <div className="flex space-x-6">
-              <a href="#" className="py-2 px-3 border rounded-md">
+              <a href="#" className="py-2 px-3 border rounded-md text-black">
                 Sign In
               </a>
               <a
                 href="#"
-                className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800"
+                className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800 text-white"
               >
                 Create an account
               </a>
