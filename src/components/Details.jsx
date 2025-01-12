@@ -36,7 +36,11 @@ const Details = () => {
           "Content-Type": "application/json", // Ensure you're sending JSON data
         },
       });
-      navigate("/result", { state: { data: response.data } });  // use navigate instead of history.push
+      const schemesArray = response.data;
+
+      // Navigate to the result page and pass the schemesArray
+      navigate("/result", { state: { data: schemesArray } });
+
     } catch (error) {
       console.error("Error submitting form", error);
     }
