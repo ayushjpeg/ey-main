@@ -7,20 +7,20 @@ const Footer = () => {
         {/* Left Section */}
         <div className="text-left mb-1 lg:mb-0">
           <h1 className="text-2xl font-bold text-orange-500">GetScheme</h1>
-          <p className="mt-4 text-neutral-400">
+          <p className="mt-4 text-black-400">
             Unlock opportunities tailored for you.
           </p>
         </div>
 
         {/* Right Section */}
         <div className="w-full lg:w-auto">
-          <h3 className="text-md font-semibold mb-1 text-neutral-300">Resources</h3>
+          <h3 className="text-md font-semibold mb-1 text-orange-500">Resources</h3>
           <ul className="space-y-2">
             {resourcesLinks.map((link, index) => (
               <li key={index}>
                 <a
                   href={link.href}
-                  className="text-neutral-300 hover:text-white"
+                  className="text-black-300 hover:text-white"
                 >
                   {link.text}
                 </a>

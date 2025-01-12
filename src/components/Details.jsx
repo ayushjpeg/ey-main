@@ -14,7 +14,7 @@ const Details = () => {
       <form
         className="mt-10 w-full max-w-4xl bg-white shadow-lg p-8 rounded-lg border border-orange-700"
         style={{
-          background: "linear-gradient(to bottom, #000000,rgb(0, 0, 0))",
+          background: "linear-gradient(to bottom,rgb(255, 255, 255),rgb(151, 146, 146))",
         }}
       >
         {/* Gender */}
