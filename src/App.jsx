@@ -61,7 +61,7 @@ const App = () => {
           <Route path="/documents" element={<Documents />} />
           <Route
             path="/result"
-            element={<Result schemes={mockSchemeData} />}
+            element={<Result  />}
           />
         </Routes>
       </div>
