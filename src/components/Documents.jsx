@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Documents = () => {
+  const navigate = useNavigate();
   const [files, setFiles] = useState([]);
+  const [error, setError] = useState("");
 
   const handleFileChange = (event) => {
     const selectedFiles = Array.from(event.target.files);
@@ -17,23 +20,51 @@ const Documents = () => {
     });
 
     if (validFiles.length !== selectedFiles.length) {
-      alert("Some files were rejected. Only PNG, JPG, JPEG, or PDF files are allowed.");
+      setError(
+        "Some files were rejected. Only PNG, JPG, JPEG, or PDF files are allowed."
+      );
+    } else {
+      setError(""); // Clear previous errors
     }
 
     // Update state with valid files
     setFiles((prevFiles) => [...prevFiles, ...validFiles]);
   };
 
-  const handleUpload = () => {
+  const handleUpload = async () => {
     if (files.length === 0) {
       alert("Please select files to upload.");
       return;
     }
-
-    // Simulate file upload
-    alert(`Successfully uploaded ${files.length} files!`);
-    console.log("Uploaded files:", files);
+  
+    const formData = new FormData();
+    files.forEach((file) => {
+      formData.append("files", file);
+    });
+  
+    try {
+      const response = await fetch("http://127.0.0.1:8000/upload", {
+        method: "POST",
+        body: formData,
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        alert("Upload successful!");
+        console.log("Response data:", data);
+        
+        // Navigate to Details page and pass data
+        navigate("/details", { state: { formData: data } });
+      } else {
+        const errorData = await response.json();
+        setError(errorData.error || "Upload failed.");
+      }
+    } catch (error) {
+      console.error("Error during upload:", error);
+      setError("An error occurred during file upload.");
+    }
   };
+  
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-black-100 py-10 px-4">
@@ -54,6 +85,7 @@ const Documents = () => {
         >
           Upload Files
         </button>
+        {error && <p className="text-red-500 mt-2">{error}</p>}
         {files.length > 0 && (
           <div className="mt-6">
             <h2 className="text-lg font-semibold mb-2">Selected Files:</h2>
