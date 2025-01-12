@@ -6,6 +6,8 @@ import Workflow from "./components/Workflow";
 import Footer from "./components/Footer";
 import Pricing from "./components/Pricing";
 import Testimonials from "./components/Testimonials";
+import Details from "./components/Details"
+import Documents from "./components/Documents"
 
 const App = () => {
   return (
@@ -30,6 +32,8 @@ const App = () => {
           <Route path="/workflow" element={<Workflow />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/details" element={<Details/>} />
+          <Route path="/documents" element={<Documents/>} />
         </Routes>
       </div>
       <Footer />
