@@ -59,7 +59,7 @@ const Documents = () => {
             <h2 className="text-lg font-semibold mb-2">Selected Files:</h2>
             <ul className="list-disc pl-5">
               {files.map((file, index) => (
-                <li key={index} className="text-gray-700">
+                <li key={index} className="text-white-700">
                   {file.name} ({(file.size / 1024).toFixed(2)} KB)
                 </li>
               ))}
